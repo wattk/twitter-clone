@@ -1,0 +1,12 @@
+GET https://api.twitter.com/2/users/44196397/tweets
+Authorization: Bearer AAAAAAAAAAAAAAAAAAAAANpcgwEAAAAACx7F2sH6cAKshCIAkU2KPhdpNU8%3D9re5og9QXERAEw5z6bGucyBhBesYG0KGTyIhfoCXv8A2pE2zoG 
+
+###
+
+GET https://api.twitter.com/2/users/by?usernames=elonmusk&expansions=pinned_tweet_id&tweet.fields=author_id
+Authorization: Bearer AAAAAAAAAAAAAAAAAAAAANpcgwEAAAAACx7F2sH6cAKshCIAkU2KPhdpNU8%3D9re5og9QXERAEw5z6bGucyBhBesYG0KGTyIhfoCXv8A2pE2zoG 
+
+###
+
+GET https://api.twitter.com/2/users/44196397/mentions
+Authorization: Bearer AAAAAAAAAAAAAAAAAAAAANpcgwEAAAAACx7F2sH6cAKshCIAkU2KPhdpNU8%3D9re5og9QXERAEw5z6bGucyBhBesYG0KGTyIhfoCXv8A2pE2zoG 
