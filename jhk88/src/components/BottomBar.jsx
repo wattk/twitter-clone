@@ -11,14 +11,14 @@ import MailIcon from './icons/MailIcon';
 import MailSolidIcon from './icons/MailSolidIcon';
 import { useState } from 'react';
 
-function BottomBar() {
+function BottomBar({ setState, setOnSearch }) {
   const [clicked, setClicked] = useState(0);
   const compArray = [
-    [<HomeSolidIcon />, <HomeIcon />],
-    [<SearchSolidIcon />, <SearchIcon />],
-    [<MicSolidIcon />, <MicIcon />],
-    [<BellSolidIcon />, <BellIcon />],
-    [<MailSolidIcon />, <MailIcon />],
+    [<HomeSolidIcon />, <HomeIcon />, 'HOME'],
+    [<SearchSolidIcon />, <SearchIcon />, 'SEARCH'],
+    [<MicSolidIcon />, <MicIcon />, 'MIC'],
+    [<BellSolidIcon />, <BellIcon />, 'ALARM'],
+    [<MailSolidIcon />, <MailIcon />, 'MAIL'],
   ];
   return (
     <div className='border-t-[1px] border-slate-200 h-[55px] w-full bg-inherit absolute bottom-0'>
@@ -31,6 +31,8 @@ function BottomBar() {
               key={index}
               onClick={() => {
                 setClicked(index);
+                setState(items[2]);
+                setOnSearch(false);
               }}
             >
               {items[1]}

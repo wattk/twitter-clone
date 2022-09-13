@@ -1,7 +1,7 @@
 import React from 'react';
 import Content from './Content';
 import UserInfoBar from './UserInfoBar';
-import EllipsisVerticalIcon from './icons/EllipsisVerticalIcon';
+import EllipsisVerticalIcon from '../icons/EllipsisVerticalIcon';
 
 function Post({ url, content, info }) {
   return (

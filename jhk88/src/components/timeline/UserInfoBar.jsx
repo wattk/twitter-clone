@@ -8,6 +8,7 @@ function UserInfoBar({ info }) {
   const day = currTime.getDate() - infoDate.getDate();
   const hour = currTime.getHours() - infoDate.getHours();
   const minute = currTime.getMinutes() - infoDate.getMinutes();
+  const second = currTime.getSeconds() - infoDate.getSeconds();
   function calcDate() {
     if (year > 0)
       return (
@@ -24,13 +25,13 @@ function UserInfoBar({ info }) {
         infoDate.getDate()
       );
     } else if (day < 8 && day > 0) {
-      return `${day} ${day > 0 ? 'days' : 'day'}`;
+      return `${day}d`;
     } else if (hour > 0) {
       return `${hour}h`;
     } else if (minute > 0) {
       return `${minute}m`;
     } else {
-      return 'just now';
+      return `${second}s`;
     }
   }
   const date = calcDate();

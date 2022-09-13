@@ -20,3 +20,22 @@ code {
 ::-webkit-scrollbar {
   display: none;
 }
+
+::placeholder {
+  color: #232323;
+  opacity: 1;
+}
+::ms-input-placeholder {
+  color: #232323;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+  background: none;
+}
+.inputFocus {
+  outline: none;
+  border: none;
+  background: none;
+}

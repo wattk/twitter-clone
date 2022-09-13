@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import ArrowPathRoundIcon from './icons/ArrowPathRoundIcon';
-import ShareIcon from './icons/ShareIcon';
-import ChatBubbleIcon from './icons/ChatBubbleIcon';
-import HeartIcon from './icons/HeartIcon';
+import ArrowPathRoundIcon from '../icons/ArrowPathRoundIcon';
+import ShareIcon from '../icons/ShareIcon';
+import ChatBubbleIcon from '../icons/ChatBubbleIcon';
+import HeartIcon from '../icons/HeartIcon';
 
 function ActivityBar() {
   const [color, setColor] = useState('none');
