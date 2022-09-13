@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ArrowPathRoundIcon from './icons/ArrowPathRoundIcon';
-import ArrowUpTrayIcon from './icons/ArrowUpTrayIcon';
+import ShareIcon from './icons/ShareIcon';
 import ChatBubbleIcon from './icons/ChatBubbleIcon';
 import HeartIcon from './icons/HeartIcon';
 
@@ -15,11 +15,7 @@ function ActivityBar() {
   return (
     <div className='flex justify-between w-full'>
       <div className='flex items-center'>
-        <button
-          onClick={() => {
-            setReplyCount(replyCount + 1);
-          }}
-        >
+        <button>
           <ChatBubbleIcon classname={colorclass} />
         </button>
         <span className={`ml-1 ${colorclass}`}>{replyCount}</span>
@@ -46,7 +42,7 @@ function ActivityBar() {
         <span className={`ml-1 ${colorclass}`}>{likeCount}</span>
       </div>
       <button>
-        <ArrowUpTrayIcon classname={colorclass} />
+        <ShareIcon classname={colorclass} />
       </button>
     </div>
   );

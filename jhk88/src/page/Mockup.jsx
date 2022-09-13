@@ -18,7 +18,7 @@ function Mockup() {
 
   return (
     <div className='flex mt-16'>
-      <div className='mockup-phone min-w-[442px] h-[765px]'>
+      <div className='mockup-phone min-w-[442px] min-h-[765px]'>
         <div className='camera'></div>
         <div className='display drawer h-[735px]'>
           <input id='my-drawer' type='checkbox' className='drawer-toggle' />

@@ -3,30 +3,50 @@ import React from 'react';
 function UserInfoBar({ info }) {
   const infoDate = new Date(info.date);
   const currTime = new Date();
+  const year = currTime.getFullYear() - infoDate.getFullYear();
   const month = currTime.getMonth() - infoDate.getMonth();
-  const day = currTime.getDay() - infoDate.getDay();
+  const day = currTime.getDate() - infoDate.getDate();
   const hour = currTime.getHours() - infoDate.getHours();
   const minute = currTime.getMinutes() - infoDate.getMinutes();
-  const date = () => {
+  function calcDate() {
+    if (year > 0)
+      return (
+        infoDate.getFullYear() +
+        '.' +
+        infoDate.toLocaleString('default', { month: 'short' }) +
+        '.' +
+        infoDate.getDate()
+      );
     if (month > 0 || day > 7) {
-      return infoDate.getDate() + ' ' + infoDate.getTime();
+      return (
+        infoDate.toLocaleString('default', { month: 'short' }) +
+        ' ' +
+        infoDate.getDate()
+      );
     } else if (day < 8 && day > 0) {
-      return `${day}days`;
+      return `${day} ${day > 0 ? 'days' : 'day'}`;
     } else if (hour > 0) {
       return `${hour}h`;
-    } else {
+    } else if (minute > 0) {
       return `${minute}m`;
+    } else {
+      return 'just now';
     }
-  };
+  }
+  const date = calcDate();
+  console.log('date ', date.length * 10);
   return (
     <div className='flex pt-2 w-[304px] items-baseline mr-1'>
       <div className='whitespace-nowrap truncate'>
         <span className='text-lg font-semibold'>{info.name}</span>
         <span className='text-md pl-1 text-slate-600'>@{info.id}</span>
       </div>
-      <div className='text-md text-slate-600'>
+      <div
+        className='text-md text-slate-600'
+        style={{ minWidth: `${(date.length + 2) * 10}px` }}
+      >
         <span className='px-1'>•</span>
-        {date()}
+        {date}
       </div>
     </div>
   );
