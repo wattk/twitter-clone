@@ -6,7 +6,7 @@ for (let i = 0; i < 18; i++) {
   const data = {};
 
   const url = faker.image.cats(300, 300, true);
-  const profImgUrl = faker.image.image(600, 600, true);
+  const profImgUrl = faker.image.cats(600, 600, true);
   data.url = { url, profImgUrl };
   const intro = faker.lorem.lines();
   const location =
@@ -20,7 +20,10 @@ for (let i = 0; i < 18; i++) {
   const name = faker.random.words();
   const firstname = name.substring(0, name.indexOf(' '));
   const lastname = name.substring(name.indexOf(' ') + 1);
-  const id = faker.internet.userName(firstname, lastname);
+  const id = faker.internet.userName(
+    firstname.length > 0 ? firstname : lastname,
+    firstname.length > 0 ? lastname : firstname
+  );
   data.info = { date, name, id };
   const replyCount = faker.datatype.number({ max: 20 });
   const retweetCount = faker.datatype.number({

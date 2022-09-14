@@ -21,7 +21,7 @@ function Post({ user, setUserProfile, setCurrUser }) {
           <img
             className='mask mask-circle w-[50px]'
             src={url.url}
-            alt='profilePicture'
+            alt='profile'
           />
         </button>
       </div>

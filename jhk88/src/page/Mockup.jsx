@@ -12,8 +12,8 @@ import { faker } from '@faker-js/faker';
 const userinfo = {
   info: { id: 'spongebob_0223', name: 'SpongeBob' },
   url: {
-    url: faker.image.animals(500, 500, true),
-    profImgUrl: 'https://picsum.photos/600',
+    url: faker.image.cats(500, 500, true),
+    profImgUrl: faker.image.cats(600, 600, true),
   },
   profile: {
     intro: faker.lorem.lines(),
@@ -51,7 +51,7 @@ function Mockup() {
             <div className='flex flex-col w-full h-full'>
               <CellBar isProfile={currState === 'PROFILE'} />
               {currState === 'PROFILE' && (
-                <Profile selectedUser={currUser} user={userinfo.info.name} />
+                <Profile selectedUser={currUser} user={userinfo} />
               )}
               {currState !== 'PROFILE' && (
                 <>
@@ -70,6 +70,9 @@ function Mockup() {
                     )}
                     {currState === 'SEARCH' && <Search onSearch={onSearch} />}
                     {currState === 'MAIL' && <Mail onSearch={onSearch} />}
+                  </div>
+                  <div className='absolute right-[20px] bottom-[60px] bg-yellow-500 w-[100px] h-[50px]'>
+                    icon
                   </div>
                 </>
               )}
