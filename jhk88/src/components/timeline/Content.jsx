@@ -24,14 +24,14 @@ function replaceHttp(inputString, keys) {
   }
   return inputString;
 }
-function Content({ content }) {
+function Content({ content, activities }) {
   let newContent = replaceKeys(content, '[@#][\\w]+');
   newContent = replaceHttp(newContent, 'https?:\\S+');
 
   return (
     <div className='mr-4'>
       <div className='pb-2'>{parse(newContent)}</div>
-      <ActivityBar />
+      <ActivityBar activities={activities} />
     </div>
   );
 }

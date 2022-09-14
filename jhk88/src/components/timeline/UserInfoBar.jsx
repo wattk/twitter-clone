@@ -35,7 +35,6 @@ function UserInfoBar({ info }) {
     }
   }
   const date = calcDate();
-  console.log('date ', date.length * 10);
   return (
     <div className='flex pt-2 w-[304px] items-baseline mr-1'>
       <div className='whitespace-nowrap truncate'>

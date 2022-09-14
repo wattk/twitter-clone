@@ -6,19 +6,41 @@ import SideBar from '../components/SideBar';
 import Timeline from './Timeline';
 import Search from './Search';
 import Mail from './Mail';
+import Profile from './Profile';
+import { faker } from '@faker-js/faker';
+
+const userinfo = {
+  info: { id: 'spongebob_0223', name: 'SpongeBob' },
+  url: {
+    url: faker.image.animals(500, 500, true),
+    profImgUrl: 'https://picsum.photos/600',
+  },
+  profile: {
+    intro: faker.lorem.lines(),
+    location: faker.address.cityName() + ', ' + faker.address.countryCode(),
+    link: Math.round(Math.random()) ? faker.internet.domainName() : '',
+  },
+  follows: {
+    following: Math.round(Math.random() * 100),
+    followers: Math.round(Math.random() * 100),
+  },
+};
 
 function Mockup() {
   const [currState, setCurrState] = useState('HOME');
   const [onSearch, setOnSearch] = useState(false);
-  const userinfo = {
-    id: 'spongebob_0223',
-    name: 'SpongeBob',
-    imgUrl: 'https://picsum.photos/200',
-    profImgUrl: 'https://picsum.photos/300',
-    following: Math.round(Math.random() * 100),
-    followers: Math.round(Math.random() * 100),
-  };
-
+  const [currUser, setCurrUser] = useState(userinfo);
+  const [navIndex, setNavIndex] = useState(0);
+  function setUserProfile() {
+    setCurrState('PROFILE');
+    setNavIndex(-1);
+  }
+  function setProfile() {
+    const drawer = document.getElementById('my-drawer');
+    drawer.click();
+    setUserProfile();
+    setCurrUser(userinfo);
+  }
   return (
     <div className='flex mt-16'>
       <div className='mockup-phone min-w-[442px] min-h-[765px]'>
@@ -27,22 +49,39 @@ function Mockup() {
           <input id='my-drawer' type='checkbox' className='drawer-toggle' />
           <div className='artboard artboard-demo phone-3 relative drawer-content'>
             <div className='flex flex-col w-full h-full'>
-              <CellBar />
-              <TopBar
-                user={userinfo}
-                state={currState}
-                onSearch={onSearch}
-                setOnSearch={setOnSearch}
-              />
-              <div className='overflow-y-auto mb-[50px]'>
-                {currState === 'HOME' && <Timeline />}
-                {currState === 'SEARCH' && <Search onSearch={onSearch} />}
-                {currState === 'MAIL' && <Mail onSearch={onSearch} />}
-              </div>
+              <CellBar isProfile={currState === 'PROFILE'} />
+              {currState === 'PROFILE' && (
+                <Profile selectedUser={currUser} user={userinfo.info.name} />
+              )}
+              {currState !== 'PROFILE' && (
+                <>
+                  <TopBar
+                    user={userinfo}
+                    state={currState}
+                    onSearch={onSearch}
+                    setOnSearch={setOnSearch}
+                  />
+                  <div className='overflow-y-auto mb-[50px]'>
+                    {currState === 'HOME' && (
+                      <Timeline
+                        setUserProfile={setUserProfile}
+                        setCurrUser={setCurrUser}
+                      />
+                    )}
+                    {currState === 'SEARCH' && <Search onSearch={onSearch} />}
+                    {currState === 'MAIL' && <Mail onSearch={onSearch} />}
+                  </div>
+                </>
+              )}
             </div>
-            <BottomBar setState={setCurrState} setOnSearch={setOnSearch} />
+            <BottomBar
+              setState={setCurrState}
+              setOnSearch={setOnSearch}
+              navIndex={navIndex}
+              setNavIndex={setNavIndex}
+            />
           </div>
-          <SideBar user={userinfo} />
+          <SideBar user={userinfo} setProfile={setProfile} />
         </div>
       </div>
     </div>

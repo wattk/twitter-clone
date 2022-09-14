@@ -11,8 +11,7 @@ function TopBar({ user, state, onSearch, setOnSearch }) {
       style={{
         justifyContent: `${
           state === 'HOME' ||
-          (state === 'SEARCH' && !onSearch) ||
-          state === 'MAIL'
+          ((state === 'SEARCH' || state === 'MAIL') && !onSearch)
             ? 'space-between'
             : 'flex-start'
         }`,
@@ -22,7 +21,7 @@ function TopBar({ user, state, onSearch, setOnSearch }) {
         <label htmlFor='my-drawer' className='drawer-button'>
           <img
             className='mask mask-circle w-[30px]'
-            src={user.imgUrl}
+            src={user.url.url}
             alt='profile'
           />
         </label>
@@ -39,19 +38,16 @@ function TopBar({ user, state, onSearch, setOnSearch }) {
         </>
       )}
       {state === 'SEARCH' && (
-        <>
-          <input
-            type='text'
-            className={`border border-2 rounded-[20px] bg-slate-200 px-2 w-[70%] relative ${
-              onSearch ? 'inputFocus ml-7' : ''
-            }`}
-            placeholder='Search Twitter'
-            onFocus={() => {
-              setOnSearch(true);
-            }}
-          />
-          {!onSearch && <SettingsIcon />}
-        </>
+        <input
+          type='text'
+          className={`border border-2 rounded-[20px] bg-slate-200 px-2 w-[70%] relative ${
+            onSearch ? 'inputFocus ml-7' : ''
+          }`}
+          placeholder='Search Twitter'
+          onFocus={() => {
+            setOnSearch(true);
+          }}
+        />
       )}
       {state === 'MIC' && (
         <h1 className='ml-8 font-semibold text-xl tracking-wide'>Spaces</h1>
@@ -67,19 +63,19 @@ function TopBar({ user, state, onSearch, setOnSearch }) {
         </>
       )}
       {state === 'MAIL' && (
-        <>
-          <input
-            type='text'
-            className={`border border-2 rounded-[20px] bg-slate-200 px-2 w-[70%] ${
-              onSearch ? 'inputFocus ml-7' : ''
-            }`}
-            placeholder='Search Direct Messages'
-            onFocus={() => {
-              setOnSearch(true);
-            }}
-          />
-          {!onSearch && <SettingsIcon />}
-        </>
+        <input
+          type='text'
+          className={`border border-2 rounded-[20px] bg-slate-200 px-2 w-[70%] ${
+            onSearch ? 'inputFocus ml-7' : ''
+          }`}
+          placeholder='Search Direct Messages'
+          onFocus={() => {
+            setOnSearch(true);
+          }}
+        />
+      )}
+      {(state === 'MAIL' || state === 'SEARCH') && !onSearch && (
+        <SettingsIcon />
       )}
     </div>
   );
