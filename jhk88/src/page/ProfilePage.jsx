@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileTabs from '../components/profile/ProfileTabs';
 import UserProfile from '../components/profile/UserProfile';
 
-function Profile({ selectedUser, user }) {
+function ProfilePage({ selectedUser, user }) {
   return (
     <>
       <UserProfile selectedUser={selectedUser} user={user} />
@@ -11,4 +11,4 @@ function Profile({ selectedUser, user }) {
   );
 }
 
-export default Profile;
+export default ProfilePage;

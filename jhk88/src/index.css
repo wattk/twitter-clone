@@ -39,3 +39,17 @@ input:focus {
   border: none;
   background: none;
 }
+
+.drawer-toggle ~ .drawer-side > .drawer-overlay.drawer-bottom + * {
+  --tw-translate-x: 0%;
+  --tw-translate-y: 750px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.drawer-toggle:checked ~ .drawer-side > .drawer-overlay.drawer-bottom + * {
+  --tw-translate-y: 480px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}

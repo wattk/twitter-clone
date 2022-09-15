@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function ProfileTabs() {
   const [isActive, setIsActive] = useState(0);
   const tabs = ['Tweets', 'Tweets & replies', 'Media', 'Likes'];
+
   return (
     <div className='tabs flex justify-between mt-3'>
       {tabs.map((tab, index) => (
@@ -10,7 +11,7 @@ function ProfileTabs() {
           key={index}
           className={`tab tab-bordered flex-grow ${
             index === isActive
-              ? 'tab-active border-blue-400 text-blue-400'
+              ? 'tab-active border-sky-400 text-sky-400'
               : 'border-slate-400 text-slate-400'
           }`}
           style={{

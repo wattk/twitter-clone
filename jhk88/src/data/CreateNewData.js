@@ -26,12 +26,8 @@ for (let i = 0; i < 18; i++) {
   );
   data.info = { date, name, id };
   const replyCount = faker.datatype.number({ max: 20 });
-  const retweetCount = faker.datatype.number({
-    max: faker.datatype.number(),
-  });
-  const heartCount = faker.datatype.number({
-    max: faker.datatype.number(),
-  });
+  const retweetCount = faker.datatype.number({ max: faker.datatype.number() });
+  const heartCount = faker.datatype.number({ max: faker.datatype.number() });
   data.activities = { replyCount, retweetCount, heartCount };
   data.content = tweeterData.data[i].text;
   Data.push(data);
@@ -40,6 +36,6 @@ for (let i = 0; i < 18; i++) {
 Data.sort(function (a, b) {
   return b.info.date - a.info.date;
 });
-
+// Data.map((data) => console.log(data))
 const mockData = { data: Data };
 export default mockData;

@@ -16,8 +16,8 @@ function UserProfile({ selectedUser, user }) {
   };
   return (
     <>
-      <div className='absolute top-0 h-[20%] overflow-hidden z-[-1]'>
-        <img src={url.profImgUrl} alt='bg' />
+      <div className='absolute top-0 left-0 h-[20%] overflow-hidden z-[-1]'>
+        <img src={url.profImgUrl} alt='bg' className='translate-y-[-35%]' />
       </div>
       <div className='px-5'>
         <div className='mt-[100px] flex justify-between items-end'>
@@ -28,13 +28,13 @@ function UserProfile({ selectedUser, user }) {
           />
 
           {isSelf && (
-            <button className='border-[1px] border-blue-500 px-5 py-1 text-blue-500 tracking-wide rounded-[50px]'>
+            <button className='border-[1px] border-sky-500 px-5 py-1 text-sky-500 tracking-wide rounded-[50px]'>
               Edit profile
             </button>
           )}
           {!isSelf && (
             <button
-              className='bg-blue-500 px-5 py-1 text-white tracking-wide rounded-[50px]'
+              className='bg-sky-500 px-5 py-1 text-white tracking-wide rounded-[50px]'
               onClick={addFollower}
             >
               Follow
@@ -61,7 +61,7 @@ function UserProfile({ selectedUser, user }) {
               href={profile.link}
               target='_blank'
               rel='noreferrer'
-              className='text-blue-400'
+              className='text-sky-400'
             >
               {profile.link}
             </a>

@@ -6,8 +6,11 @@ import SideBar from '../components/SideBar';
 import Timeline from './Timeline';
 import Search from './Search';
 import Mail from './Mail';
-import Profile from './Profile';
+import ProfilePage from './ProfilePage';
 import { faker } from '@faker-js/faker';
+import Quil from '../components/icons/Twitter_Quil.png';
+import Envelope from '../components/icons/EnvelopeAddIcon';
+import WriteTweet from './WriteTweet';
 
 const userinfo = {
   info: { id: 'spongebob_0223', name: 'SpongeBob' },
@@ -26,13 +29,22 @@ const userinfo = {
   },
 };
 
+const profile = 'PROFILE';
+const search = 'SEARCH';
+const mail = 'MAIL';
+const home = 'HOME';
+const write_tweet = 1;
+const write_mail = 2;
+
 function Mockup() {
-  const [currState, setCurrState] = useState('HOME');
+  const [currState, setCurrState] = useState(home);
   const [onSearch, setOnSearch] = useState(false);
   const [currUser, setCurrUser] = useState(userinfo);
   const [navIndex, setNavIndex] = useState(0);
+  const [isWrite, setIsWrite] = useState(0);
+
   function setUserProfile() {
-    setCurrState('PROFILE');
+    setCurrState(profile);
     setNavIndex(-1);
   }
   function setProfile() {
@@ -49,11 +61,11 @@ function Mockup() {
           <input id='my-drawer' type='checkbox' className='drawer-toggle' />
           <div className='artboard artboard-demo phone-3 relative drawer-content'>
             <div className='flex flex-col w-full h-full'>
-              <CellBar isProfile={currState === 'PROFILE'} />
-              {currState === 'PROFILE' && (
-                <Profile selectedUser={currUser} user={userinfo} />
+              <CellBar isProfile={currState === profile} />
+              {!isWrite && currState === profile && (
+                <ProfilePage selectedUser={currUser} user={userinfo} />
               )}
-              {currState !== 'PROFILE' && (
+              {!isWrite && currState !== profile && (
                 <>
                   <TopBar
                     user={userinfo}
@@ -61,28 +73,63 @@ function Mockup() {
                     onSearch={onSearch}
                     setOnSearch={setOnSearch}
                   />
-                  <div className='overflow-y-auto mb-[50px]'>
-                    {currState === 'HOME' && (
+                  <div className='overflow-y-auto mb-[50px] relative'>
+                    {currState === home && (
                       <Timeline
                         setUserProfile={setUserProfile}
                         setCurrUser={setCurrUser}
+                        userid={userinfo.info.id}
                       />
                     )}
-                    {currState === 'SEARCH' && <Search onSearch={onSearch} />}
-                    {currState === 'MAIL' && <Mail onSearch={onSearch} />}
-                  </div>
-                  <div className='absolute right-[20px] bottom-[60px] bg-yellow-500 w-[100px] h-[50px]'>
-                    icon
+                    {currState === search && <Search onSearch={onSearch} />}
+                    {currState === mail && <Mail onSearch={onSearch} />}
                   </div>
                 </>
               )}
+              {isWrite === write_tweet && (
+                <WriteTweet
+                  user={userinfo}
+                  setIsWrite={() => {
+                    setIsWrite(0);
+                    setCurrState(home);
+                    setNavIndex(0);
+                  }}
+                />
+              )}
             </div>
-            <BottomBar
-              setState={setCurrState}
-              setOnSearch={setOnSearch}
-              navIndex={navIndex}
-              setNavIndex={setNavIndex}
-            />
+            {!isWrite && (
+              <>
+                <div className='absolute text-center right-[20px] bottom-[65px] bg-transparent w-[60px] h-[60px] rounded-full overflow-hidden drop-shadow-xl '>
+                  {currState !== mail && (
+                    <button
+                      onClick={() => {
+                        setIsWrite(write_tweet);
+                        setNavIndex(-1);
+                      }}
+                    >
+                      <img alt='write tweet' src={Quil} />
+                    </button>
+                  )}
+                  {currState === mail && (
+                    <button
+                      className='w-[60px] h-[60px] bg-sky-500 flex justify-center items-center'
+                      onClick={() => {
+                        setIsWrite(write_mail);
+                        setNavIndex(-1);
+                      }}
+                    >
+                      <Envelope />
+                    </button>
+                  )}
+                </div>
+                <BottomBar
+                  setState={setCurrState}
+                  setOnSearch={setOnSearch}
+                  navIndex={navIndex}
+                  setNavIndex={setNavIndex}
+                />
+              </>
+            )}
           </div>
           <SideBar user={userinfo} setProfile={setProfile} />
         </div>

@@ -12,7 +12,7 @@ function Mail({ onSearch }) {
             Drop a line, share Tweets and more with private conversations
             between you and others on Twitter.
           </div>
-          <button className='bg-blue-500 px-5 py-2 text-white font-bold m-4 tracking-wide rounded-[50px]'>
+          <button className='bg-sky-500 px-5 py-2 text-white font-bold m-4 tracking-wide rounded-[50px]'>
             Write a message
           </button>
         </div>

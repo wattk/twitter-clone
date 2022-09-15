@@ -7,7 +7,7 @@ function replaceKeys(inputString, keys) {
   for (let i = 0; i < matches.length; i++) {
     inputString = inputString.replace(
       matches[i],
-      '<button className="text-blue-500">' + matches[i] + '</button>'
+      '<button className="text-sky-500">' + matches[i] + '</button>'
     );
   }
   return inputString;
@@ -17,7 +17,7 @@ function replaceHttp(inputString, keys) {
   for (let i = 0; i < matches.length; i++) {
     inputString = inputString.replace(
       matches[i],
-      `<a className="text-blue-500" href=${matches[i]} target="_blank">` +
+      `<a className="text-sky-500" href=${matches[i]} target="_blank">` +
         matches[i] +
         '</a>'
     );
