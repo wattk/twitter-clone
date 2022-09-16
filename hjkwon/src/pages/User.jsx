@@ -1,11 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import MainSection from "../components/MainSection";
 import Profile from "../components/atomic/Profile";
 import ThreadList from "../components/thread/ThreadList";
 import TwitterContext from "../context/TwitterContext";
 
 function User() {
-  const { user, userData } = useContext(TwitterContext);
+  const { user, userData, dispatch } = useContext(TwitterContext);
+
+  useEffect(() => {
+    const getUserData = async () => {
+      await dispatch({
+        type: "GET_USER_DATA",
+      });
+    };
+    getUserData();
+  }, [dispatch]);
   return (
     <>
       <MainSection bottom="5rem">

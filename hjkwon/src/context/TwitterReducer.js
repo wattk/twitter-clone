@@ -8,16 +8,9 @@ const twitterReducer = (state, action) => {
       };
     /** data데이터 context에 저장 */
     case "INIT_DATA":
-      const filteredData = action.payload.filter(
-        (item) =>
-          item.info.id === state.user.id ||
-          item.retweet.indexOf(state.user.id) !== -1
-      );
-
       return {
         ...state,
         data: action.payload,
-        userData: filteredData,
       };
     /** tweet 추가 */
     case "ADD_TWEET":
@@ -45,6 +38,33 @@ const twitterReducer = (state, action) => {
             };
           } else return ele;
         }),
+      };
+    case "SEARCH_TWEET":
+      const regExp = new RegExp(action.payload, "i");
+      return {
+        ...state,
+        searchData: state.data.filter((item) => {
+          return (
+            regExp.test(item.info.id) ||
+            regExp.test(item.content) ||
+            regExp.test(item.info.name)
+          );
+        }),
+      };
+    case "CLEAR_SEARCH":
+      return {
+        ...state,
+        searchData: [],
+      };
+    case "GET_USER_DATA":
+      const filteredData = state.data.filter(
+        (item) =>
+          item.info.id === state.user.id ||
+          item.retweet.indexOf(state.user.id) !== -1
+      );
+      return {
+        ...state,
+        userData: filteredData,
       };
     default:
       return state;
