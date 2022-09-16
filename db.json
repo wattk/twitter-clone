@@ -1,0 +1,596 @@
+{
+  "user": {
+    "id": "dool2kim",
+    "name": "김둘리",
+    "profile": "https://placeimg.com/192/192/people",
+    "following": 132,
+    "follower": 1294
+  },
+  "data": [
+    {
+      "id": "twt001",
+      "url": {
+        "url": "https://picsum.photos/300",
+        "profImgUrl": "https://picsum.photos/700"
+      },
+      "info": {
+        "id": "elonmusk11",
+        "name": "Elon Musk00",
+        "date": "Wed Sep 13 2022 15:39:00 GMT+0900"
+      },
+      "like": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd"
+      ],
+      "retweet": [
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray"
+      ],
+      "follows": { "following": 150, "followers": 75 },
+      "content": "RT @Tesla: Tesla Model Y receives highest safety score of any vehicle ever tested https://t.co/SJDXowtkGw",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt002",
+      "url": {
+        "url": "https://picsum.photos/500",
+        "profImgUrl": "https://picsum.photos/800"
+      },
+      "info": {
+        "id": "footballtheory",
+        "name": "Football Conspiracy Theories",
+        "date": "Wed Sep 13 2022 15:10:00 GMT+0900"
+      },
+      "like": [
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick",
+        "lexfridman",
+        "elonmusk"
+      ],
+      "retweet": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick",
+        "lexfridman",
+        "elonmusk",
+        "garyblack00",
+        "eminem",
+        "polarbear1986",
+        "jinhakapply",
+        "testid2"
+      ],
+      "follows": { "following": 850, "followers": 800 },
+      "content": "“That’s not punny!”",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt003",
+      "url": {
+        "url": "https://picsum.photos/700",
+        "profImgUrl": "https://picsum.photos/600"
+      },
+      "info": {
+        "id": "enoughtest",
+        "name": "Just Long Enough",
+        "date": "Wed Sep 13 2022 12:41:00 GMT+0900"
+      },
+      "like": ["garyblack00", "eminem", "polarbear1986", "jinhakapply"],
+      "retweet": [
+        "lexfridman",
+        "elonmusk",
+        "garyblack00",
+        "eminem",
+        "polarbear1986"
+      ],
+      "follows": { "following": 1, "followers": 0 },
+      "content": "RT @Tesla: Enter your destination &amp; your Tesla will automatically include Supercharging stops in your route",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt004",
+      "url": {
+        "url": "https://picsum.photos/400",
+        "profImgUrl": "https://picsum.photos/700"
+      },
+      "info": {
+        "id": "boringid",
+        "name": "Bored AFFFFFFF",
+        "date": "Wed Sep 13 2022 12:41:00 GMT+0900"
+      },
+      "like": [
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick",
+        "lexfridman",
+        "elonmusk",
+        "garyblack00",
+        "eminem",
+        "polarbear1986",
+        "jinhakapply",
+        "testid2"
+      ],
+      "retweet": [
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick",
+        "lexfridman",
+        "elonmusk",
+        "garyblack00"
+      ],
+      "follows": { "following": 11, "followers": 42 },
+      "content": "@WholeMarsBlog More solar + batteries needed. Batteries are great at dealing with peak demand.",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt005",
+      "url": {
+        "url": "https://picsum.photos/500",
+        "profImgUrl": "https://picsum.photos/800"
+      },
+      "info": {
+        "id": "thisisnice1988",
+        "name": "I'm Fearless!",
+        "date": "Wed Sep 10 2022 16:41:00 GMT+0900"
+      },
+      "like": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick",
+        "lexfridman",
+        "elonmusk"
+      ],
+      "retweet": ["dool2kim", "elonmusk11", "footballtheory", "enoughtest"],
+      "follows": { "following": 150, "followers": 1000 },
+      "content": "@kerrikgray @lexfridman \uD83D\uDC4D",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt006",
+      "url": {
+        "url": "https://picsum.photos/700",
+        "profImgUrl": "https://picsum.photos/900"
+      },
+      "info": {
+        "id": "jakejyllenhaal",
+        "name": "Jake Jyllenhaal",
+        "date": "Wed Sep 10 2022 16:41:00 GMT+0900"
+      },
+      "like": [
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick",
+        "lexfridman",
+        "elonmusk"
+      ],
+      "retweet": [
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick",
+        "lexfridman",
+        "elonmusk",
+        "garyblack00",
+        "eminem"
+      ],
+      "follows": { "following": 55, "followers": 72 },
+      "content": "@lexfridman I accept 99% of cookies, but \uD83D\uDCAF if choc chip",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt007",
+      "url": {
+        "url": "https://picsum.photos/600",
+        "profImgUrl": "https://picsum.photos/600"
+      },
+      "info": {
+        "id": "id_iddd",
+        "name": "what is your id",
+        "date": "Wed Sep 09 2022 16:41:00 GMT+0900"
+      },
+      "like": ["jakejyllenhaal", "id_iddd", "WholeMarsBlog"],
+      "retweet": [],
+      "follows": { "following": 785, "followers": 786 },
+      "content": "@garyblack00 If Twitter put as much effort into bot/spam removal as they do into subpoenas, we wouldn’t have this problem in the first place!",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt008",
+      "url": {
+        "url": "https://picsum.photos/400",
+        "profImgUrl": "https://picsum.photos/700"
+      },
+      "info": {
+        "id": "WholeMarsBlog",
+        "name": "Whole Mars",
+        "date": "Wed Sep 09 2022 16:41:00 GMT+0900"
+      },
+      "like": [],
+      "retweet": [],
+      "follows": { "following": 45, "followers": 48 },
+      "content": "@cb_doge @musicphantom69 \uD83E\uDD23",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt009",
+      "url": {
+        "url": "https://picsum.photos/900",
+        "profImgUrl": "https://picsum.photos/800"
+      },
+      "info": {
+        "id": "musicphantom69",
+        "name": "Phantom Music",
+        "date": "Wed Sep 08 2022 16:41:00 GMT+0900"
+      },
+      "like": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog"
+      ],
+      "retweet": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd"
+      ],
+      "follows": { "following": 77, "followers": 12 },
+      "content": "@garyblack00 We have advised all potential witnesses to provide full cooperation to the court, but we do not control their actions",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt010",
+      "url": {
+        "url": "https://picsum.photos/300",
+        "profImgUrl": "https://picsum.photos/900"
+      },
+      "info": {
+        "id": "kerrikgray",
+        "name": "Kerrik Gray",
+        "date": "Wed Sep 08 2022 16:41:00 GMT+0900"
+      },
+      "like": [
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick"
+      ],
+      "retweet": [
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog"
+      ],
+      "follows": { "following": 145, "followers": 0 },
+      "content": "@garyblack00 Read the actual ruling. We had zero to do with David Sack’s response. Zero.",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt011",
+      "url": {
+        "url": "https://picsum.photos/400",
+        "profImgUrl": "https://picsum.photos/600"
+      },
+      "info": {
+        "id": "patrick",
+        "name": "Patrick Starrr",
+        "date": "Wed Sep 07 2022 16:41:00 GMT+0900"
+      },
+      "like": [],
+      "retweet": [],
+      "follows": { "following": 4545, "followers": 4245 },
+      "content": "@musicphantom69 @devine1jojo @DraganaMusk @DogeAccept @Sakalichi @CCuntamed @1st_Akkadian @Raychii00420 @tearsintherain1 @xdianalandx @PryZmRuleZZ @lionelclone @safferguru @benjsequations @TeslaDarth @JoleneBlahahaha @DavidLenartowi1 @RENATUSInc5000 @JupitorAscendi1 @MedicineManWalk @cultureAwear @Eminem @elonmusk @occupymars42069 @SnoopDogg @jamielsimon https://t.co/oftg9bubqQ",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt012",
+      "url": {
+        "url": "https://picsum.photos/500",
+        "profImgUrl": "https://picsum.photos/700"
+      },
+      "info": {
+        "id": "lexfridman",
+        "name": "Lex Fridman",
+        "date": "Wed Sep 07 2022 16:41:00 GMT+0900"
+      },
+      "like": [],
+      "retweet": [
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog"
+      ],
+      "follows": { "following": 457, "followers": 856 },
+      "content": "@PawlowskiMario @mikeflache @CyrilCoste @Nicochan33 @baski_LA @Analytics_699 @elonmusk @MargaretSiegien @KanezaDiane @DeepLearn007 @Khulood_Almani @mvollmer1 @jamesvgingerich @tobiaskintzel @Hana_ElSayyed @rwang0 @kalydeoo @Fabriziobustama @sulefati7 @ScottWLuton @CurieuxExplorer @efipm @enricomolinari @ZaleskiLuke @donaldtusk @IanLJones98 Check this out! #Spookyshiba are feeling #generous again. This time they’re giving away a brand new iPhone 13 256GB + 10 #BNB \nIt’s gonna be a #SPKY #HalloweenTime \uD83D\uDC40\n\nhttps://t.co/xj5Zvqrpmc\n\n@ShibaSpooky @GerhardHacher @safemoon #Crypto #cryptocurrency #BUSD #games #P2E #BTC",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt013",
+      "url": {
+        "url": "https://picsum.photos/300",
+        "profImgUrl": "https://picsum.photos/800"
+      },
+      "info": {
+        "id": "elonmusk",
+        "name": "Elon Musk",
+        "date": "Wed Sep 03 2022 16:41:00 GMT+0900"
+      },
+      "like": [
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick",
+        "lexfridman",
+        "elonmusk",
+        "garyblack00",
+        "eminem",
+        "polarbear1986"
+      ],
+      "retweet": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid"
+      ],
+      "follows": { "following": 12, "followers": 12 },
+      "content": "@SarahLCashman @NHAQUEES @TRUMP4FEDPRISON @elonmusk Doubtful that a sorry looking slob like you has the money to afford a solar system, let alone a battery.",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt014",
+      "url": {
+        "url": "https://picsum.photos/600",
+        "profImgUrl": "https://picsum.photos/900"
+      },
+      "info": {
+        "id": "garyblack00",
+        "name": "Gary Black",
+        "date": "Wed Sep 03 2022 16:41:00 GMT+0900"
+      },
+      "like": [],
+      "retweet": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid"
+      ],
+      "follows": { "following": 452, "followers": 222 },
+      "content": "@dianag0230 @Twitter @elonmusk Then, one more 7 day ban. After that, they lock your account &amp; you can't delete it to start a new one. \nOnce that happens, you are back on \"the cycle\" and you are targeted for removal eventually. \n\nTwitter suck becaise of this.\n\nI remember \"fun twitter\" 12 years ago.",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt015",
+      "url": {
+        "url": "https://picsum.photos/200",
+        "profImgUrl": "https://picsum.photos/600"
+      },
+      "info": {
+        "id": "eminem",
+        "name": "Eminem",
+        "date": "Wed Sep 03 2022 16:41:00 GMT+0900"
+      },
+      "like": [
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69"
+      ],
+      "retweet": [],
+      "follows": { "following": 788, "followers": 554 },
+      "content": "@xtr0py @AQUAB23 @Zamuel42 @ScottBibler @jerrythom11 @lanstorm1967 @Soulshaker007 @PKekbar @JustinChurch14 @FallingWaterz @pacman522 @archang31s @CAsunshinegal @1llum1nat10n @Merkaba369 @lolbionica_ @wfinalle57 @theNDExperience @11Llotus @Elsie27619825 @CaptainUnseen01 @realUnnameable @777nibnuds @astrolinas @IloMagyar @RealRiteNow @Washer_of_Yam @hobgoblin4191 @breeeezy35 @WuanWain @SisyphusBeetle @AmericanNurse64 @StupidAssJack01 @9thRealm @kr4ydnb @YamWasher @HealthRadix @BlakeOltmann @RWMaloneMD @jackabryan @elonmusk @johnpodesta Yep ....",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt016",
+      "url": {
+        "url": "https://picsum.photos/300",
+        "profImgUrl": "https://picsum.photos/700"
+      },
+      "info": {
+        "id": "polarbear1986",
+        "name": "Polar Bear",
+        "date": "Wed Sep 02 2022 16:41:00 GMT+0900"
+      },
+      "like": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69"
+      ],
+      "retweet": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69"
+      ],
+      "follows": { "following": 785, "followers": 899 },
+      "content": "@elonmusk Fuck Twitter….\nWhat’s next",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt017",
+      "url": {
+        "url": "https://picsum.photos/400",
+        "profImgUrl": "https://picsum.photos/800"
+      },
+      "info": {
+        "id": "jinhakapply",
+        "name": "Jinhak Apply",
+        "date": "Wed Sep 01 2022 16:41:00 GMT+0900"
+      },
+      "like": ["eminem", "polarbear1986", "jinhakapply", "testid2"],
+      "retweet": ["garyblack00", "eminem", "polarbear1986", "jinhakapply"],
+      "follows": { "following": 4366, "followers": 7868 },
+      "content": "@ahmedDod6 @elonmusk Need or want?",
+
+      "depth": 1,
+      "parentId": null
+    },
+    {
+      "id": "twt018",
+      "url": {
+        "url": "https://picsum.photos/100",
+        "profImgUrl": "https://picsum.photos/900"
+      },
+      "info": {
+        "id": "testid2",
+        "name": "testname2",
+        "date": "Wed Sep 01 2022 16:41:00 GMT+0900"
+      },
+      "like": [
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog",
+        "musicphantom69",
+        "kerrikgray",
+        "patrick",
+        "lexfridman"
+      ],
+      "retweet": [
+        "dool2kim",
+        "elonmusk11",
+        "footballtheory",
+        "enoughtest",
+        "boringid",
+        "thisisnice1988",
+        "jakejyllenhaal",
+        "id_iddd",
+        "WholeMarsBlog"
+      ],
+      "follows": { "following": 78, "followers": 456 },
+      "content": "Regulators need to adjust timescales to the needs of the world!! @elonmusk",
+
+      "depth": 1,
+      "parentId": null
+    }
+  ]
+}
