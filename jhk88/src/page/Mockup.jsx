@@ -14,6 +14,7 @@ import WriteTweet from './WriteTweet';
 
 const userinfo = {
   info: { id: 'spongebob_0223', name: 'SpongeBob' },
+  list: [],
   url: {
     url: faker.image.cats(500, 500, true),
     profImgUrl: faker.image.cats(600, 600, true),
@@ -27,6 +28,7 @@ const userinfo = {
     following: Math.round(Math.random() * 100),
     followers: Math.round(Math.random() * 100),
   },
+  tweets: [],
 };
 
 const profile = 'PROFILE';

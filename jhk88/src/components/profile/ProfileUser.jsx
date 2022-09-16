@@ -1,19 +1,28 @@
-import React from 'react';
-import { faker } from '@faker-js/faker';
+import React, { useState, useCallback } from 'react';
 import LocationIcon from '../icons/LocationIcon';
 import LinkIcon from '../icons/LinkIcon';
 
-function UserProfile({ selectedUser, user }) {
+function ProfileUser({ selectedUser, user }) {
   const info = selectedUser.info;
   const url = selectedUser.url;
   const follows = selectedUser.follows;
   const profile = selectedUser.profile;
   const isSelf = info.id === user.info.id ? true : false;
-  const addFollower = () => {
-    if (!user.list) user.list = [];
+
+  const [isFollowing, setIsFollowing] = useState(
+    user.list.filter((f) => f === info.id).length
+  );
+  const followControl = useCallback(() => {
+    if (isFollowing) {
+      user.follows.following--;
+      user.list = user.list.filter((u) => u.id === info.id);
+      setIsFollowing(0);
+      return;
+    }
     user.follows.following++;
-    user.list = [...user.list, selectedUser];
-  };
+    user.list = [...user.list, info.id];
+    setIsFollowing(1);
+  }, [isFollowing, info.id, user]);
   return (
     <>
       <div className='absolute top-0 left-0 h-[20%] overflow-hidden z-[-1]'>
@@ -35,9 +44,9 @@ function UserProfile({ selectedUser, user }) {
           {!isSelf && (
             <button
               className='bg-sky-500 px-5 py-1 text-white tracking-wide rounded-[50px]'
-              onClick={addFollower}
+              onClick={followControl}
             >
-              Follow
+              {isFollowing ? 'Following' : 'Follow'}
             </button>
           )}
         </div>
@@ -47,7 +56,7 @@ function UserProfile({ selectedUser, user }) {
             @{info.id}
           </div>
         </div>
-        <div className='mt-1 font-medium'>{faker.lorem.lines()}</div>
+        <div className='mt-1 font-medium'>{profile.intro}</div>
       </div>
       <div className='my-1 ml-[1rem] text-slate-500 flex flex-row'>
         <span className='flex flex-row items-center'>
@@ -92,4 +101,4 @@ function UserProfile({ selectedUser, user }) {
   );
 }
 
-export default UserProfile;
+export default ProfileUser;

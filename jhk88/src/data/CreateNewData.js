@@ -16,7 +16,6 @@ for (let i = 0; i < 18; i++) {
   const followers = faker.datatype.number();
   const following = faker.datatype.number();
   data.follows = { followers, following };
-  const date = faker.date.past();
   const name = faker.random.words();
   const firstname = name.substring(0, name.indexOf(' '));
   const lastname = name.substring(name.indexOf(' ') + 1);
@@ -24,12 +23,15 @@ for (let i = 0; i < 18; i++) {
     firstname.length > 0 ? firstname : lastname,
     firstname.length > 0 ? lastname : firstname
   );
-  data.info = { date, name, id };
+  data.info = { name, id };
   const replyCount = faker.datatype.number({ max: 20 });
   const retweetCount = faker.datatype.number({ max: faker.datatype.number() });
   const heartCount = faker.datatype.number({ max: faker.datatype.number() });
-  data.activities = { replyCount, retweetCount, heartCount };
-  data.content = tweeterData.data[i].text;
+  const activities = { replyCount, retweetCount, heartCount };
+  data.tweets = [
+    { text: tweeterData.data[i].text, date: faker.date.past(), activities },
+  ];
+  data.list = [];
   Data.push(data);
 }
 

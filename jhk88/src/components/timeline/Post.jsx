@@ -8,9 +8,9 @@ function Post({ user, setUserProfile, setCurrUser, isUser }) {
   const { data, setData } = useContext(DataContext);
 
   const url = user.url;
-  const content = user.content;
   const info = user.info;
-  const activities = user.activities;
+  const tweets = user.tweets.length > 0 ? user.tweets[0] : '';
+  const activities = tweets.activities;
   return (
     <div className='flex border-b-[1px] border-slate-200'>
       <div className='pt-4 ml-4'>
@@ -28,9 +28,9 @@ function Post({ user, setUserProfile, setCurrUser, isUser }) {
         </button>
       </div>
       <div className='pl-2 w-[315px]'>
-        <UserInfoBar info={info} />
+        <UserInfoBar info={info} tweetDate={tweets.date} />
         <div className='pb-4'>
-          <Content content={content} activities={activities} />
+          <Content content={tweets.text} activities={activities} />
         </div>
       </div>
       <div className='mr-4 pt-[.85rem] dropdown dropdown-end'>

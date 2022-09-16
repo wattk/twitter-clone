@@ -25,8 +25,11 @@ function replaceHttp(inputString, keys) {
   return inputString;
 }
 function Content({ content, activities }) {
-  let newContent = replaceKeys(content, '[@#][\\w]+');
-  newContent = replaceHttp(newContent, 'https?:\\S+');
+  let newContent = '';
+  if (content) {
+    newContent = replaceKeys(content, '[@#][\\w]+');
+    newContent = replaceHttp(newContent, 'https?:\\S+');
+  }
 
   return (
     <div className='mr-4'>

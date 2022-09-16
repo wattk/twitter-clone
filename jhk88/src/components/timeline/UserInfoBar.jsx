@@ -1,7 +1,7 @@
 import React from 'react';
 
-function UserInfoBar({ info }) {
-  const infoDate = new Date(info.date);
+function UserInfoBar({ info, tweetDate }) {
+  const infoDate = new Date(tweetDate);
   const currTime = new Date();
   const year = currTime.getFullYear() - infoDate.getFullYear();
   const month = currTime.getMonth() - infoDate.getMonth();

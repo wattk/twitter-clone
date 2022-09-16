@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import XMarkIcon from '../components/icons/XMarkIcon';
 import ChevronDownIcon from '../components/icons/ChevronDownIcon';
 import { DataContext } from '../context/DataContextProvider';
@@ -8,21 +8,17 @@ function WriteTweet({ user, setIsWrite }) {
   const [content, setContent] = useState(null);
   const { data } = useContext(DataContext);
 
-  function addTweet() {
-    if (content.length < 1) {
-      return;
-    }
-    const newTweet = { text: content, date: faker.date.between() };
-
-    if (!user.tweets) user.tweets = [];
-    user.tweets = [...user.tweets, newTweet];
+  const addTweet = useCallback(() => {
+    if (content.length < 1) return;
+    const activities = {
+      replyCount: faker.datatype.number({ max: 3 }),
+      retweetCount: faker.datatype.number({ max: 1 }),
+      heartCount: faker.datatype.number({ max: 3 }),
+    };
+    const newTweet = { text: content, date: new Date(), activities };
+    user.tweets.unshift(newTweet);
 
     const newData = {
-      activities: {
-        replyCount: faker.datatype.number({ max: 3 }),
-        retweetCount: faker.datatype.number({ max: 1 }),
-        heartCount: faker.datatype.number({ max: 3 }),
-      },
       info: {
         date: newTweet.date,
         name: user.info.name,
@@ -31,11 +27,11 @@ function WriteTweet({ user, setIsWrite }) {
       url: user.url,
       follows: user.follows,
       profile: user.profile,
-      content: newTweet.text,
+      tweets: [newTweet],
     };
     data.unshift(newData);
     setIsWrite();
-  }
+  }, [content, data, setIsWrite, user]);
 
   return (
     <div className='drawer'>
