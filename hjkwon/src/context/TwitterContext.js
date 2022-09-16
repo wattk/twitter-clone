@@ -4,6 +4,7 @@ import twitterReducer from "./TwitterReducer";
 
 const TwitterContext = createContext();
 
+/** 최상위 컴포넌트 */
 export const TwitterProvider = ({ children }) => {
   const initialState = {
     user: {},
@@ -13,6 +14,7 @@ export const TwitterProvider = ({ children }) => {
   };
 
   const fetchInfos = async () => {
+    //db.json의 user, data를 한번에 불러와 context에 저장
     const response = await axios.all([
       axios.get("http://localhost:8000/user"),
       axios.get("http://localhost:8000/data"),
@@ -21,6 +23,7 @@ export const TwitterProvider = ({ children }) => {
     dispatch({ type: "INIT_DATA", payload: response[1].data });
   };
 
+  //mount시에 작동
   useEffect(() => {
     fetchInfos();
   }, []);

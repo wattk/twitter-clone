@@ -15,6 +15,7 @@ function Home() {
   } = useContext(TwitterContext);
   const [isOpen, setIsOpen] = useState(false);
 
+  /** 사이드바 노출 */
   const onClickButton = () => {
     setIsOpen(true);
   };

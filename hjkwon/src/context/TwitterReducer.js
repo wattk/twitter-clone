@@ -1,10 +1,12 @@
 const twitterReducer = (state, action) => {
   switch (action.type) {
+    /** user데이터 context에 저장 */
     case "INIT_USER":
       return {
         ...state,
         user: action.payload,
       };
+    /** data데이터 context에 저장 */
     case "INIT_DATA":
       const filteredData = action.payload.filter(
         (item) =>
@@ -17,11 +19,13 @@ const twitterReducer = (state, action) => {
         data: action.payload,
         userData: filteredData,
       };
+    /** tweet 추가 */
     case "ADD_TWEET":
       return {
         ...state,
         data: [action.payload, ...state.data],
       };
+    /** tweet 삭제 */
     case "DELETE_TWEET":
       return {
         ...state,
@@ -29,6 +33,7 @@ const twitterReducer = (state, action) => {
           return item.id !== action.payload;
         }),
       };
+    /** 리트윗, 좋아요 업데이트 */
     case "UPDATE_TWEET":
       return {
         ...state,

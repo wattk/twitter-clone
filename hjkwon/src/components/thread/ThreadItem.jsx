@@ -5,14 +5,19 @@ import TwitterContext from "../../context/TwitterContext";
 
 function ThreadItem({ item }) {
   const { user, dispatch } = useContext(TwitterContext);
+  //해당 트윗이 로그인 유저의 트윗인지 확인
   const isUser = user.id === item.info.id;
+  //삭제 버튼 노출 여부
   const [isShow, setIsShow] = useState(false);
+  const labelRef = useRef(null);
+
+  //로그인 유저 좋아요, 리트윗 여부
   const [isLike, setIsLike] = useState(item.like.indexOf(user.id) !== -1);
   const [isRetweet, setIsRetweet] = useState(
     item.retweet.indexOf(user.id) !== -1
   );
-  const labelRef = useRef(null);
 
+  //label 이외의 공간 클릭 시 삭제 버튼 숨기기
   useEffect(() => {
     const labelClick = (e) => {
       if (labelRef.current && !labelRef.current.contains(e.target)) {
@@ -24,18 +29,25 @@ function ThreadItem({ item }) {
 
     return () => window.removeEventListener("mousedown", labelClick);
   });
+
+  /** 리트윗, 좋아요 버튼 클릭 이벤트 */
   const handleClick = (e) => {
     e.preventDefault();
     const target = e.currentTarget.htmlFor;
     let updateData = [];
+
+    //버튼이 리트윗 버튼인지, 좋아요 버튼인지 분기처리
     if (target === "retweet-btn") {
+      //좋아요를 누른 상태라면 로그인 유저의 아이디를 배열에서 삭제, 누르지 않은 상태라면 추가
       if (isRetweet) {
         updateData = item.retweet.filter((ele) => ele !== user.id);
       } else {
         updateData = [user.id, ...item.retweet];
       }
+      //state 변경
       setIsRetweet(!isRetweet);
 
+      //context 업데이트
       dispatch({
         type: "UPDATE_TWEET",
         payload: { id: item.id, category: "retweet", data: updateData },
@@ -55,6 +67,7 @@ function ThreadItem({ item }) {
     }
   };
 
+  /** 트윗 삭제 이벤트 */
   const handleDelete = (id) => {
     dispatch({
       type: "DELETE_TWEET",

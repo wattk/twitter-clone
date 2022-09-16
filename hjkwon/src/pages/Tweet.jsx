@@ -9,9 +9,12 @@ function Tweet() {
   const [text, setText] = useState("");
   const navigate = useNavigate();
 
+  /** 트윗 140자 제한 */
   const handleChange = (e) => {
     if (e.target.value.length < 140) setText(e.target.value);
   };
+
+  /** 트윗 추가 이벤트 */
   const handleSubmit = async (e) => {
     e.preventDefault();
 
