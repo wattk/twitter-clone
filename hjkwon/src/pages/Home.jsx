@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
-import ThreadList from "../components/ThreadList";
+import ThreadList from "../components/thread/ThreadList";
 import { FaTwitter } from "react-icons/fa";
 import Profile from "../components/atomic/Profile";
 import Sidebar from "../components/Sidebar";
@@ -51,7 +51,7 @@ function Home() {
           />
         )}
       </Header>
-      <MainSection>
+      <MainSection top="5rem" bottom="5rem">
         <ThreadList data={data} />
       </MainSection>
     </>

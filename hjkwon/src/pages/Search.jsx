@@ -60,7 +60,7 @@ function Search() {
           />
         </svg>
       </Header>
-      <MainSection>
+      <MainSection top="5rem" bottom="5rem">
         <div className="h-screen"></div>
       </MainSection>
     </>
