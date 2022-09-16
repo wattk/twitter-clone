@@ -2,7 +2,7 @@ function MainSection({ children, top, bottom }) {
   return (
     <div
       className="bg-white h-fit"
-      style={{ "margin-top": top, "margin-bottom": bottom }}
+      style={{ marginTop: top, marginBottom: bottom }}
     >
       {children}
     </div>

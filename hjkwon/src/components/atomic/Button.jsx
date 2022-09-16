@@ -1,3 +1,5 @@
+import CustomIcon from "../icons/CustomIcon";
+
 function Button({ children, customStyle, event, fill, btn, path }) {
   return (
     <>
@@ -6,16 +8,7 @@ function Button({ children, customStyle, event, fill, btn, path }) {
         className="flex cursor-pointer items-center justify-between w-12"
         onClick={event}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill={fill}
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className={customStyle}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d={path} />
-        </svg>
+        <CustomIcon fill={fill} customStyle={customStyle} path={path} />
 
         {children}
       </label>
