@@ -1,0 +1,21 @@
+@media only screen {
+  .App {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .Modal {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .fix-content {
+    max-width: 900px;
+    position: fixed;
+    width: 100%;
+  }
+  .thread {
+    grid-template-columns: 80px 1fr;
+  }
+  textarea::placeholder {
+    @apply text-lg;
+  }
+}
