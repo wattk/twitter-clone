@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Post from '../components/timeline/Post';
-import { DataContext } from '../App';
+import { DataContext } from '../context/DataContextProvider';
 
 function Timeline({ setUserProfile, setCurrUser, userid }) {
   const { data } = useContext(DataContext);

@@ -1,21 +1,12 @@
-import { createContext, useState } from 'react';
+import React from 'react';
+import DataContextProvider from './context/DataContextProvider';
 import Mockup from './page/Mockup';
-import MockData from './data/CreateNewData';
-// import MockData from './data/test.json';
-
-export const DataContext = createContext({
-  data: MockData.data,
-  setData: () => {},
-});
 
 function App() {
-  const [data, setData] = useState(MockData.data);
-  const value = { data, setData };
-
   return (
-    <DataContext.Provider value={value}>
+    <DataContextProvider>
       <Mockup />
-    </DataContext.Provider>
+    </DataContextProvider>
   );
 }
 

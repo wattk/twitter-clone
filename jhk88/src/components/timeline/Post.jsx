@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Content from './Content';
 import UserInfoBar from './UserInfoBar';
 import EllipsisVerticalIcon from '../icons/EllipsisVerticalIcon';
-import { DataContext } from '../../App';
+import { DataContext } from '../../context/DataContextProvider';
 
 function Post({ user, setUserProfile, setCurrUser, isUser }) {
   const { data, setData } = useContext(DataContext);

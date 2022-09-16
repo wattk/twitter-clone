@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import XMarkIcon from '../components/icons/XMarkIcon';
 import ChevronDownIcon from '../components/icons/ChevronDownIcon';
-import { DataContext } from '../App';
+import { DataContext } from '../context/DataContextProvider';
 import { faker } from '@faker-js/faker';
 
 function WriteTweet({ user, setIsWrite }) {
