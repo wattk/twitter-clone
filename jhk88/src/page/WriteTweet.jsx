@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker';
 import userinfo from '../data/userinfo';
 
 function WriteTweet({ setIsWrite }) {
-  const [content, setContent] = useState(null);
+  const [content, setContent] = useState('');
   const { data } = useContext(DataContext);
 
   const addTweet = useCallback(() => {
@@ -33,7 +33,6 @@ function WriteTweet({ setIsWrite }) {
     data.unshift(newData);
     setIsWrite();
   }, [content, data, setIsWrite]);
-
   return (
     <div className='drawer'>
       <input id='select-toggle' type='checkbox' className='drawer-toggle' />
@@ -44,9 +43,9 @@ function WriteTweet({ setIsWrite }) {
           </button>
           <button
             disabled={!content}
-            className={`text-lg tracking-wide font-medium px-4 py-1 bg-sky-${
-              !content ? '400' : '500'
-            } text-white rounded-3xl`}
+            className={`text-lg tracking-wide font-medium px-4 py-1 text-white rounded-3xl bg-sky-${
+              content.length < 1 ? '400' : '500'
+            } `}
             type='submit'
             onClick={addTweet}
           >
