@@ -43,9 +43,12 @@ function WriteTweet({ setIsWrite }) {
           </button>
           <button
             disabled={!content}
-            className={`text-lg tracking-wide font-medium px-4 py-1 text-white rounded-3xl bg-sky-${
-              content.length < 1 ? '400' : '500'
-            } `}
+            className={
+              'text-lg tracking-wide font-medium px-4 py-1 text-white rounded-3xl '
+            }
+            style={{
+              backgroundColor: `${content.length < 1 ? '#38BDF8' : '#0EA5E9'}`,
+            }}
             type='submit'
             onClick={addTweet}
           >
