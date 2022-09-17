@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState, useRef, useMemo } from "react";
 import Profile from "../atomic/Profile";
 import Button from "../atomic/Button";
 import TwitterContext from "../../context/TwitterContext";
@@ -12,9 +12,10 @@ function ThreadItem({ item }) {
   const labelRef = useRef(null);
 
   //로그인 유저 좋아요, 리트윗 여부
-  const [isLike, setIsLike] = useState(item.like.indexOf(user.id) !== -1);
-  const [isRetweet, setIsRetweet] = useState(
-    item.retweet.indexOf(user.id) !== -1
+  const isLike = useMemo(() => item.like.indexOf(user.id) !== -1, [item.like]);
+  const isRetweet = useMemo(
+    () => item.retweet.indexOf(user.id) !== -1,
+    [item.retweet]
   );
 
   //label 이외의 공간 클릭 시 삭제 버튼 숨기기
@@ -40,12 +41,11 @@ function ThreadItem({ item }) {
     if (target === "retweet-btn") {
       //좋아요를 누른 상태라면 로그인 유저의 아이디를 배열에서 삭제, 누르지 않은 상태라면 추가
       if (isRetweet) {
+        console.log("updateData = ", updateData);
         updateData = item.retweet.filter((ele) => ele !== user.id);
       } else {
         updateData = [user.id, ...item.retweet];
       }
-      //state 변경
-      setIsRetweet(!isRetweet);
 
       //context 업데이트
       dispatch({
@@ -58,7 +58,6 @@ function ThreadItem({ item }) {
       } else {
         updateData = [user.id, ...item.like];
       }
-      setIsLike(!isLike);
 
       dispatch({
         type: "UPDATE_TWEET",

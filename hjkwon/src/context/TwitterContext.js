@@ -8,7 +8,6 @@ const TwitterContext = createContext();
 export const TwitterProvider = ({ children }) => {
   const initialState = {
     user: {},
-    userData: [],
     searchData: [],
     data: [],
     loading: false,
