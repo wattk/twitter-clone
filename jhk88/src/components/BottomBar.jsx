@@ -9,18 +9,19 @@ import BellIcon from './icons/BellIcon';
 import BellSolidIcon from './icons/BellSolidIcon';
 import MailIcon from './icons/MailIcon';
 import MailSolidIcon from './icons/MailSolidIcon';
+import * as STATE from '../data/state';
 
-function BottomBar({ setState, setOnSearch, navIndex, setNavIndex }) {
+function BottomBar({ setState, navIndex, setNavIndex }) {
   const compArray = [
-    [<HomeSolidIcon />, <HomeIcon />, 'HOME'],
-    [<SearchSolidIcon />, <SearchIcon />, 'SEARCH'],
-    [<MicSolidIcon />, <MicIcon />, 'MIC'],
-    [<BellSolidIcon />, <BellIcon />, 'ALARM'],
-    [<MailSolidIcon />, <MailIcon />, 'MAIL'],
+    [<HomeSolidIcon />, <HomeIcon />, STATE.home],
+    [<SearchSolidIcon />, <SearchIcon />, STATE.search],
+    [<MicSolidIcon />, <MicIcon />, STATE.mic],
+    [<BellSolidIcon />, <BellIcon />, STATE.alarm],
+    [<MailSolidIcon />, <MailIcon />, STATE.mail],
   ];
 
   return (
-    <div className='border-t-[1px] border-slate-200 h-[55px] w-full bg-inherit absolute bottom-0'>
+    <div className='border-t-[1px] border-slate-200 h-[55px] w-full bg-white absolute bottom-0'>
       <div className='flex justify-between items-center h-full px-8'>
         {compArray.map((items, index) => {
           return navIndex === index ? (
@@ -31,7 +32,6 @@ function BottomBar({ setState, setOnSearch, navIndex, setNavIndex }) {
               onClick={() => {
                 setNavIndex(index);
                 setState(items[2]);
-                setOnSearch(false);
               }}
             >
               {items[1]}
