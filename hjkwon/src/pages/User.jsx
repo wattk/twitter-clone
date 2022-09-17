@@ -1,20 +1,18 @@
-import { useContext, useEffect } from "react";
+import { useContext, useMemo } from "react";
 import MainSection from "../components/MainSection";
 import Profile from "../components/atomic/Profile";
 import ThreadList from "../components/thread/ThreadList";
 import TwitterContext from "../context/TwitterContext";
 
 function User() {
-  const { user, userData, dispatch } = useContext(TwitterContext);
+  const { user, data } = useContext(TwitterContext);
 
-  useEffect(() => {
-    const getUserData = async () => {
-      await dispatch({
-        type: "GET_USER_DATA",
-      });
-    };
-    getUserData();
-  }, [dispatch]);
+  const filteredData = useMemo(() => {
+    return data.filter(
+      (item) => item.info.id === user.id || item.retweet.indexOf(user.id) !== -1
+    );
+  }, [data]);
+
   return (
     <>
       <MainSection bottom="5rem">
@@ -50,7 +48,7 @@ function User() {
             <span>{user.follower}</span>
           </div>
         </div>
-        <ThreadList data={userData} />
+        <ThreadList data={filteredData} />
       </MainSection>
     </>
   );

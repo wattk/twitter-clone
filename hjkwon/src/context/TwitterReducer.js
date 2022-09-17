@@ -56,16 +56,6 @@ const twitterReducer = (state, action) => {
         ...state,
         searchData: [],
       };
-    case "GET_USER_DATA":
-      const filteredData = state.data.filter(
-        (item) =>
-          item.info.id === state.user.id ||
-          item.retweet.indexOf(state.user.id) !== -1
-      );
-      return {
-        ...state,
-        userData: filteredData,
-      };
     default:
       return state;
   }
