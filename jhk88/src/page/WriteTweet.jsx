@@ -3,8 +3,9 @@ import XMarkIcon from '../components/icons/XMarkIcon';
 import ChevronDownIcon from '../components/icons/ChevronDownIcon';
 import { DataContext } from '../context/DataContextProvider';
 import { faker } from '@faker-js/faker';
+import userinfo from '../data/userinfo';
 
-function WriteTweet({ user, setIsWrite }) {
+function WriteTweet({ setIsWrite }) {
   const [content, setContent] = useState(null);
   const { data } = useContext(DataContext);
 
@@ -16,22 +17,22 @@ function WriteTweet({ user, setIsWrite }) {
       heartCount: faker.datatype.number({ max: 3 }),
     };
     const newTweet = { text: content, date: new Date(), activities };
-    user.tweets.unshift(newTweet);
+    userinfo.tweets.unshift(newTweet);
 
     const newData = {
       info: {
         date: newTweet.date,
-        name: user.info.name,
-        id: user.info.id,
+        name: userinfo.info.name,
+        id: userinfo.info.id,
       },
-      url: user.url,
-      follows: user.follows,
-      profile: user.profile,
+      url: userinfo.url,
+      follows: userinfo.follows,
+      profile: userinfo.profile,
       tweets: [newTweet],
     };
     data.unshift(newData);
     setIsWrite();
-  }, [content, data, setIsWrite, user]);
+  }, [content, data, setIsWrite]);
 
   return (
     <div className='drawer'>
@@ -56,7 +57,7 @@ function WriteTweet({ user, setIsWrite }) {
           <div>
             <img
               className='mask mask-circle w-[40px]'
-              src={user.url.url}
+              src={userinfo.url.url}
               alt='profile'
             />
           </div>
@@ -77,9 +78,6 @@ function WriteTweet({ user, setIsWrite }) {
             />
           </div>
         </div>
-        {/* <div className='bg-yellow-300 w-full h-[100px]'>
-          <div>inside</div>
-        </div> */}
       </div>
       <div className='drawer-side'>
         <label
