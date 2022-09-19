@@ -30,7 +30,7 @@ function Post({ user, setUserProfile, setCurrUser, isUser }) {
       <div className='pl-2 w-[315px]'>
         <UserInfoBar info={info} tweetDate={tweets.date} />
         <div className='pb-4'>
-          <Content content={tweets.text} activities={activities} />
+          <Content content={tweets.text} activities={activities} user={user} />
         </div>
       </div>
       <div className='mr-4 pt-[.85rem] dropdown dropdown-end'>

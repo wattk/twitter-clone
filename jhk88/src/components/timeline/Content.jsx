@@ -24,7 +24,7 @@ function replaceHttp(inputString, keys) {
   }
   return inputString;
 }
-function Content({ content, activities }) {
+function Content({ content, activities, user }) {
   let newContent = '';
   if (content) {
     newContent = replaceKeys(content, '[@#][\\w]+');
@@ -34,7 +34,7 @@ function Content({ content, activities }) {
   return (
     <div className='mr-4'>
       <div className='pb-2'>{parse(newContent)}</div>
-      <ActivityBar activities={activities} />
+      <ActivityBar activities={activities} user={user} />
     </div>
   );
 }

@@ -12,7 +12,7 @@ for (let i = 0; i < 18; i++) {
   const location =
     faker.address.cityName() + ', ' + faker.address.countryCode();
   const link = Math.round(Math.random()) ? faker.internet.domainName() : '';
-  data.profile = { intro, location, link };
+  data.profile = { intro, location, link, likes: [] };
   const followers = faker.datatype.number();
   const following = faker.datatype.number();
   data.follows = { followers, following };
@@ -29,7 +29,12 @@ for (let i = 0; i < 18; i++) {
   const heartCount = faker.datatype.number({ max: faker.datatype.number() });
   const activities = { replyCount, retweetCount, heartCount };
   data.tweets = [
-    { text: tweeterData.data[i].text, date: faker.date.past(), activities },
+    {
+      id: faker.datatype.number(),
+      text: tweeterData.data[i].text,
+      date: faker.date.past(),
+      activities,
+    },
   ];
   data.list = [];
   Data.push(data);

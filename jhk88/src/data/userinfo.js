@@ -11,6 +11,7 @@ const userinfo = {
     intro: faker.lorem.lines(),
     location: faker.address.cityName() + ', ' + faker.address.countryCode(),
     link: Math.round(Math.random()) ? faker.internet.domainName() : '',
+    likes: [],
   },
   follows: {
     following: Math.round(Math.random() * 100),
