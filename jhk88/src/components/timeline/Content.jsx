@@ -30,7 +30,6 @@ function Content({ content, activities, user }) {
     newContent = replaceKeys(content, '[@#][\\w]+');
     newContent = replaceHttp(newContent, 'https?:\\S+');
   }
-
   return (
     <div className='mr-4'>
       <div className='pb-2'>{parse(newContent)}</div>

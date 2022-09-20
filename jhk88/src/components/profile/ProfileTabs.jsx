@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import ProfileTweets from './ProfileTweets';
+import ProfileLikesTab from './ProfileLikesTab';
+import ProfileTweetsTab from './ProfileTweetsTab';
 
 function ProfileTabs({ selectedUser }) {
   const [isActive, setIsActive] = useState(0);
@@ -26,7 +27,12 @@ function ProfileTabs({ selectedUser }) {
         ))}
       </div>
       <div className='overflow-y-auto mb-[50px] relative'>
-        {isActive === 0 && <ProfileTweets selectedUser={selectedUser} />}
+        {isActive === tabs.indexOf('Tweets') && (
+          <ProfileTweetsTab selectedUser={selectedUser} />
+        )}
+        {isActive === tabs.indexOf('Likes') && (
+          <ProfileLikesTab selectedUser={selectedUser} />
+        )}
       </div>
     </>
   );

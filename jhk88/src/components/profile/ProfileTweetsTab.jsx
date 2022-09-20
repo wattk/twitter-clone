@@ -3,7 +3,7 @@ import EllipsisVerticalIcon from '../icons/EllipsisVerticalIcon';
 import Content from '../timeline/Content';
 import UserInfoBar from '../timeline/UserInfoBar';
 
-function ProfileTweets({ selectedUser }) {
+function ProfileTweetsTab({ selectedUser }) {
   const url = selectedUser.url;
   const info = selectedUser.info;
   return selectedUser.tweets?.map((tweet, index) => (
@@ -18,7 +18,11 @@ function ProfileTweets({ selectedUser }) {
       <div className='pl-2 w-[315px]'>
         <UserInfoBar info={info} tweetDate={tweet.date} />
         <div className='pb-4'>
-          <Content content={tweet.text} activities={tweet.activities} />
+          <Content
+            content={tweet.text}
+            activities={tweet.activities}
+            user={selectedUser}
+          />
         </div>
       </div>
       <div className='mr-4 pt-[.85rem]'>
@@ -28,4 +32,4 @@ function ProfileTweets({ selectedUser }) {
   ));
 }
 
-export default ProfileTweets;
+export default ProfileTweetsTab;

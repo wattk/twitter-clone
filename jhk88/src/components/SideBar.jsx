@@ -18,7 +18,7 @@ function SideBar({ user, setProfile }) {
             <p>
               <b>{info.name}</b>
             </p>
-            <p>@{info.id}</p>
+            <p>@{info.userId}</p>
           </div>
           <div className='border-b-[1px] pb-2 '>
             <span>

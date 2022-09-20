@@ -39,7 +39,7 @@ function UserInfoBar({ info, tweetDate }) {
     <div className='flex pt-2 w-[304px] items-baseline mr-1'>
       <div className='whitespace-nowrap truncate'>
         <span className='text-lg font-semibold'>{info.name}</span>
-        <span className='text-md pl-1 text-slate-600'>@{info.id}</span>
+        <span className='text-md pl-1 text-slate-600'>@{info.userId}</span>
       </div>
       <div
         className='text-md text-slate-600'

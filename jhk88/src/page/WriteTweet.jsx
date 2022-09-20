@@ -11,19 +11,29 @@ function WriteTweet({ setIsWrite }) {
 
   const addTweet = useCallback(() => {
     if (content.length < 1) return;
+    const id = faker.datatype.number();
     const activities = {
+      id,
       replyCount: faker.datatype.number({ max: 3 }),
-      retweetCount: faker.datatype.number({ max: 1 }),
-      heartCount: faker.datatype.number({ max: 3 }),
+      retweet: {
+        retweetCount: faker.datatype.number({ max: 1 }),
+        retweeted: false,
+      },
+      heart: { heartCount: faker.datatype.number({ max: 3 }), hearted: false },
     };
-    const newTweet = { text: content, date: new Date(), activities };
+    const newTweet = {
+      id,
+      text: content,
+      date: new Date(),
+      activities,
+    };
     userinfo.tweets.unshift(newTweet);
 
     const newData = {
       info: {
         date: newTweet.date,
         name: userinfo.info.name,
-        id: userinfo.info.id,
+        userId: userinfo.info.userId,
       },
       url: userinfo.url,
       follows: userinfo.follows,

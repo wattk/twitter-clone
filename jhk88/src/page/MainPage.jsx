@@ -42,7 +42,7 @@ function MainPage({
               <Timeline
                 setUserProfile={setUserProfile}
                 setCurrUser={setCurrUser}
-                userid={userinfo.info.id}
+                userid={userinfo.info.userId}
               />
             )}
             {currState === STATE.search && <Search onSearch={onSearch} />}

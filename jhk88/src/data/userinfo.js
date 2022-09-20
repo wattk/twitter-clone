@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 
 const userinfo = {
-  info: { id: 'spongebob_0223', name: 'SpongeBob' },
+  info: { userId: 'spongebob_0223', name: 'SpongeBob' },
   list: [],
   url: {
     url: faker.image.cats(500, 500, true),

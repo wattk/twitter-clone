@@ -11,6 +11,7 @@ function Post({ user, setUserProfile, setCurrUser, isUser }) {
   const info = user.info;
   const tweets = user.tweets.length > 0 ? user.tweets[0] : '';
   const activities = tweets.activities;
+
   return (
     <div className='flex border-b-[1px] border-slate-200'>
       <div className='pt-4 ml-4'>

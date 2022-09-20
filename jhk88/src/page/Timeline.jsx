@@ -11,7 +11,7 @@ function Timeline({ setUserProfile, setCurrUser, userid }) {
         user={d}
         setUserProfile={setUserProfile}
         setCurrUser={setCurrUser}
-        isUser={userid === d.info.id}
+        isUser={userid === d.info.userId}
       />
     </div>
   ));

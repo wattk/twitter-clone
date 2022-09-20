@@ -22,18 +22,29 @@ function calcNumber(numbers) {
     return '';
   }
 }
-
-function ActivityBar({ activities, user }) {
-  const [color, setColor] = useState('none');
+function ActivityBar({ activities, user, setLikes }) {
   const colorclass = 'text-slate-500';
+  const retweet = activities.retweet;
+  const heart = activities.heart;
+  const [color, setColor] = useState(heart.hearted ? 'deeppink' : 'none');
 
-  const likeClicked = () => {
-    const likes = userinfo.profile.likes;
-    console.log('user', user, 'likes', likes);
-    if (likes.filter((t) => t.tweets[0].id === user.tweets[0].id).length) {
-      likes.add(user);
+  function handleHearted() {
+    heart.hearted = !heart.hearted;
+    setColor(heart.hearted ? 'deeppink' : 'none');
+    heart.heartCount = heart.hearted
+      ? heart.heartCount + 1
+      : heart.heartCount - 1;
+  }
+  function likeClicked() {
+    const id = activities.id;
+    let likes = userinfo.profile.likes;
+    if (heart.hearted) {
+      likes.push({ id: user.tweets[0].id, details: user });
+    } else {
+      likes = likes.filter((t) => t.id !== id);
     }
-  };
+    // how do you make the list to reload????????
+  }
   return (
     <div className='flex justify-between w-full'>
       <div className='flex items-center'>
@@ -47,30 +58,29 @@ function ActivityBar({ activities, user }) {
       <div className='flex items-center'>
         <button
           onClick={() => {
-            activities.retweetCount = activities.retweetCount + 1;
+            retweet.retweetCount = retweet.retweetCount + 1;
           }}
         >
           <ArrowPathRoundIcon classname={colorclass} />
         </button>
-        <span className={`ml-1 ${colorclass}`}>
-          {calcNumber(activities.retweetCount)}
+        <span
+          className='m1-1'
+          style={{ color: retweet.retweeted ? '' : '#64748b' }}
+        >
+          {calcNumber(retweet.retweetCount)}
         </span>
       </div>
       <div className='flex items-center'>
         <button
-          onClick={() => {
-            setColor(color === 'deeppink' ? 'none' : 'deeppink');
-            activities.heartCount =
-              color === 'deeppink'
-                ? activities.heartCount - 1
-                : activities.heartCount + 1;
+          onClick={(e) => {
+            handleHearted();
             likeClicked();
           }}
         >
           <HeartIcon classname={colorclass} color={color} />
         </button>
         <span className={`ml-1 ${colorclass}`}>
-          {calcNumber(activities.heartCount)}
+          {calcNumber(heart.heartCount)}
         </span>
       </div>
       <button>
