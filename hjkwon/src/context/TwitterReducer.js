@@ -30,13 +30,13 @@ const twitterReducer = (state, action) => {
     case "UPDATE_TWEET":
       return {
         ...state,
-        data: state.data.map((ele) => {
-          if (ele.id === action.payload.id) {
+        data: state.data.map((item) => {
+          if (item.id === action.payload.id) {
             return {
-              ...ele,
+              ...item,
               [action.payload.category]: action.payload.data,
             };
-          } else return ele;
+          } else return item;
         }),
       };
     case "SEARCH_TWEET":

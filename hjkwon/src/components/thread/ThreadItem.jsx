@@ -41,7 +41,6 @@ function ThreadItem({ item }) {
     if (target === "retweet-btn") {
       //좋아요를 누른 상태라면 로그인 유저의 아이디를 배열에서 삭제, 누르지 않은 상태라면 추가
       if (isRetweet) {
-        console.log("updateData = ", updateData);
         updateData = item.retweet.filter((ele) => ele !== user.id);
       } else {
         updateData = [user.id, ...item.retweet];
