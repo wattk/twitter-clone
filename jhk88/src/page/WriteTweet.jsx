@@ -6,24 +6,34 @@ import { faker } from '@faker-js/faker';
 import userinfo from '../data/userinfo';
 
 function WriteTweet({ setIsWrite }) {
-  const [content, setContent] = useState(null);
+  const [content, setContent] = useState('');
   const { data } = useContext(DataContext);
 
   const addTweet = useCallback(() => {
     if (content.length < 1) return;
+    const id = faker.datatype.number();
     const activities = {
+      id,
       replyCount: faker.datatype.number({ max: 3 }),
-      retweetCount: faker.datatype.number({ max: 1 }),
-      heartCount: faker.datatype.number({ max: 3 }),
+      retweet: {
+        retweetCount: faker.datatype.number({ max: 1 }),
+        retweeted: false,
+      },
+      heart: { heartCount: faker.datatype.number({ max: 3 }), hearted: false },
     };
-    const newTweet = { text: content, date: new Date(), activities };
+    const newTweet = {
+      id,
+      text: content,
+      date: new Date(),
+      activities,
+    };
     userinfo.tweets.unshift(newTweet);
 
     const newData = {
       info: {
         date: newTweet.date,
         name: userinfo.info.name,
-        id: userinfo.info.id,
+        userId: userinfo.info.userId,
       },
       url: userinfo.url,
       follows: userinfo.follows,
@@ -33,7 +43,6 @@ function WriteTweet({ setIsWrite }) {
     data.unshift(newData);
     setIsWrite();
   }, [content, data, setIsWrite]);
-
   return (
     <div className='drawer'>
       <input id='select-toggle' type='checkbox' className='drawer-toggle' />
@@ -44,9 +53,12 @@ function WriteTweet({ setIsWrite }) {
           </button>
           <button
             disabled={!content}
-            className={`text-lg tracking-wide font-medium px-4 py-1 bg-sky-${
-              !content ? '400' : '500'
-            } text-white rounded-3xl`}
+            className={
+              'text-lg tracking-wide font-medium px-4 py-1 text-white rounded-3xl '
+            }
+            style={{
+              backgroundColor: `${content.length < 1 ? '#38BDF8' : '#0EA5E9'}`,
+            }}
             type='submit'
             onClick={addTweet}
           >

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TopBar from '../components/TopBar';
 import CellBar from '../components/CellBar';
+import ProfilePage from './ProfilePage';
 import Timeline from './Timeline';
 import Search from './Search';
 import Mail from './Mail';
@@ -13,6 +14,7 @@ function MainPage({
   setIsWrite,
   setCurrState,
   currState,
+  currUser,
   setCurrUser,
   setNavIndex,
 }) {
@@ -22,9 +24,11 @@ function MainPage({
     setCurrState(STATE.profile);
     setNavIndex(-1);
   }
+
   return (
     <>
       <CellBar isProfile={currState === STATE.profile} />
+      {currState === STATE.profile && <ProfilePage selectedUser={currUser} />}
       {currState !== STATE.profile && (
         <>
           <TopBar
@@ -38,7 +42,7 @@ function MainPage({
               <Timeline
                 setUserProfile={setUserProfile}
                 setCurrUser={setCurrUser}
-                userid={userinfo.info.id}
+                userid={userinfo.info.userId}
               />
             )}
             {currState === STATE.search && <Search onSearch={onSearch} />}

@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 
 const userinfo = {
-  info: { id: 'spongebob_0223', name: 'SpongeBob' },
+  info: { userId: 'spongebob_0223', name: 'SpongeBob' },
   list: [],
   url: {
     url: faker.image.cats(500, 500, true),
@@ -11,6 +11,7 @@ const userinfo = {
     intro: faker.lorem.lines(),
     location: faker.address.cityName() + ', ' + faker.address.countryCode(),
     link: Math.round(Math.random()) ? faker.internet.domainName() : '',
+    likes: [],
   },
   follows: {
     following: Math.round(Math.random() * 100),

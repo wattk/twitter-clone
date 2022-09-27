@@ -7,22 +7,22 @@ function ProfileUser({ selectedUser, user }) {
   const url = selectedUser.url;
   const follows = selectedUser.follows;
   const profile = selectedUser.profile;
-  const isSelf = info.id === user.info.id ? true : false;
+  const isSelf = info.userId === user.info.userId ? true : false;
 
   const [isFollowing, setIsFollowing] = useState(
-    user.list.filter((f) => f === info.id).length
+    user.list.filter((f) => f === info.userId).length
   );
   const followControl = useCallback(() => {
     if (isFollowing) {
       user.follows.following--;
-      user.list = user.list.filter((u) => u.id === info.id);
+      user.list = user.list.filter((u) => u.id === info.userId);
       setIsFollowing(0);
       return;
     }
     user.follows.following++;
-    user.list = [...user.list, info.id];
+    user.list = [...user.list, info.userId];
     setIsFollowing(1);
-  }, [isFollowing, info.id, user]);
+  }, [isFollowing, info.userId, user]);
   return (
     <>
       <div className='absolute top-0 left-0 h-[20%] overflow-hidden z-[-1]'>
@@ -53,7 +53,7 @@ function ProfileUser({ selectedUser, user }) {
         <div className='mt-2'>
           <div className='font-bold text-2xl tracking-wide'>{info.name}</div>
           <div className='text-slate-500 font-medium tracking-tight'>
-            @{info.id}
+            @{info.userId}
           </div>
         </div>
         <div className='mt-1 font-medium'>{profile.intro}</div>

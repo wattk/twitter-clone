@@ -36,6 +36,7 @@ function Mockup() {
                     setIsWrite={setIsWrite}
                     setCurrState={setCurrState}
                     currState={currState}
+                    currUser={currUser}
                     setCurrUser={setCurrUser}
                     setNavIndex={setNavIndex}
                   />
@@ -50,8 +51,8 @@ function Mockup() {
                 <FullPage
                   isWrite={isWrite}
                   setIsWrite={setIsWrite}
-                  currUser={currUser}
                   setNavIndex={setNavIndex}
+                  setCurrState={setCurrState}
                 />
               )}
             </div>

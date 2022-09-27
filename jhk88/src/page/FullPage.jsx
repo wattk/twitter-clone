@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CellBar from '../components/CellBar';
-import ProfilePage from './ProfilePage';
 import WriteTweet from './WriteTweet';
 import * as STATE from '../data/state';
 
-function FullPage({ isWrite, setIsWrite, currUser, setNavIndex }) {
-  const [currState, setCurrState] = useState(STATE.home);
+function FullPage({ isWrite, setIsWrite, setNavIndex, setCurrState }) {
   return (
     <div className='flex flex-col w-full h-full'>
-      <CellBar isProfile={currState === STATE.profile} />
-      {currState === STATE.profile && <ProfilePage selectedUser={currUser} />}
+      <CellBar isProfile={false} />
       {isWrite === STATE.write_tweet && (
         <WriteTweet
           setIsWrite={() => {

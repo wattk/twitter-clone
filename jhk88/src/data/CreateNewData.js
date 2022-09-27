@@ -12,24 +12,35 @@ for (let i = 0; i < 18; i++) {
   const location =
     faker.address.cityName() + ', ' + faker.address.countryCode();
   const link = Math.round(Math.random()) ? faker.internet.domainName() : '';
-  data.profile = { intro, location, link };
+  data.profile = { intro, location, link, likes: [] };
   const followers = faker.datatype.number();
   const following = faker.datatype.number();
   data.follows = { followers, following };
   const name = faker.random.words();
   const firstname = name.substring(0, name.indexOf(' '));
   const lastname = name.substring(name.indexOf(' ') + 1);
-  const id = faker.internet.userName(
+  const userId = faker.internet.userName(
     firstname.length > 0 ? firstname : lastname,
     firstname.length > 0 ? lastname : firstname
   );
-  data.info = { name, id };
+  data.info = { name, userId };
+  const id = faker.datatype.number();
   const replyCount = faker.datatype.number({ max: 20 });
   const retweetCount = faker.datatype.number({ max: faker.datatype.number() });
   const heartCount = faker.datatype.number({ max: faker.datatype.number() });
-  const activities = { replyCount, retweetCount, heartCount };
+  const activities = {
+    id,
+    replyCount,
+    retweet: { retweetCount, retweeted: false },
+    heart: { heartCount, hearted: false },
+  };
   data.tweets = [
-    { text: tweeterData.data[i].text, date: faker.date.past(), activities },
+    {
+      id,
+      text: tweeterData.data[i].text,
+      date: faker.date.past(),
+      activities,
+    },
   ];
   data.list = [];
   Data.push(data);

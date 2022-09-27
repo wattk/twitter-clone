@@ -5,7 +5,7 @@ import userinfo from '../data/userinfo';
 
 function ProfilePage({ selectedUser }) {
   const filteredUser =
-    selectedUser.info.id === userinfo.info.id ? userinfo : selectedUser;
+    selectedUser.info.userId === userinfo.info.userId ? userinfo : selectedUser;
   return (
     <>
       <ProfileUser selectedUser={filteredUser} user={userinfo} />
