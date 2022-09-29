@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 function Footer() {
   return (
     <div className="fix-content bottom-0 flex justify-around items-center bg-white h-20 border shadow shadow-gray-100">
-      <Link to="/" className=" cursor-pointer w-full">
+      <Link href="/" className=" cursor-pointer w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -19,7 +19,7 @@ function Footer() {
           />
         </svg>
       </Link>
-      <Link to="/search" className="l cursor-pointer w-full">
+      <Link href="/search" className="l cursor-pointer w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -35,7 +35,7 @@ function Footer() {
           />
         </svg>
       </Link>
-      <Link to="/user " className=" cursor-pointer w-full">
+      <Link href="/user " className=" cursor-pointer w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -51,7 +51,7 @@ function Footer() {
           />
         </svg>
       </Link>
-      <Link to="/user " className=" cursor-pointer w-full">
+      <Link href="/user " className=" cursor-pointer w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

@@ -1,8 +1,8 @@
 import { useContext, useMemo } from "react";
-import MainSection from "../components/MainSection";
-import Profile from "../components/atomic/Profile";
-import ThreadList from "../components/thread/ThreadList";
-import TwitterContext from "../context/TwitterContext";
+import MainSection from "../src/components/MainSection";
+import Profile from "../src/components/atomic/Profile";
+import ThreadList from "../src/components/thread/ThreadList";
+import TwitterContext from "../src/context/TwitterContext";
 
 function User() {
   const { user, data } = useContext(TwitterContext);

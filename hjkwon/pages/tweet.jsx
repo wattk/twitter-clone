@@ -1,18 +1,21 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
-import MainSection from "../components/MainSection";
-import Profile from "../components/atomic/Profile";
-import TwitterContext from "../context/TwitterContext";
-import ImageIcon from "../components/icons/ImageIcon";
-import GifIcon from "../components/icons/GifIcon";
-import GraphIcon from "../components/icons/GraphIcon";
-import LocationIcon from "../components/icons/LocationIcon";
-import CloseIcon from "../components/icons/CloseIcon";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Header from "../src/components/Header";
+import MainSection from "../src/components/MainSection";
+import Profile from "../src/components/atomic/Profile";
+import TwitterContext from "../src/context/TwitterContext";
+import {
+  XMarkIcon,
+  PhotoIcon,
+  GifIcon,
+  ChartBarIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/solid";
 function Tweet() {
   const { user, dispatch } = useContext(TwitterContext);
   const [text, setText] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
 
   /** 트윗 140자 제한 */
   const handleChange = (e) => {
@@ -42,15 +45,15 @@ function Tweet() {
           depth: 1,
         },
       });
-      navigate("/");
+      router.push("/");
     }
   };
   return (
     <>
       <Header>
         <>
-          <Link to="/">
-            <CloseIcon />
+          <Link href="/">
+            <XMarkIcon className="w-10 h-10 text-gray-500 hover:cursor-pointer hover:text-blue-500s" />
           </Link>
           <button
             className="bg-blue-500 text-white font-bold rounded-full py-2 px-4 hover:border hover:border-blue-500 hover:bg-white hover:text-blue-500"
@@ -76,10 +79,10 @@ function Tweet() {
             ></textarea>
           </div>
           <div className="flex w-52 justify-between mx-8">
-            <ImageIcon />
-            <GifIcon />
-            <GraphIcon />
-            <LocationIcon />
+            <PhotoIcon className="w-6 h-6" />
+            <GifIcon className="w-6 h-6" />
+            <ChartBarIcon className="w-6 h-6" />
+            <MapPinIcon className="w-6 h-6" />
           </div>
         </div>
       </MainSection>

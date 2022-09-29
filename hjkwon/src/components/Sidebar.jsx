@@ -1,5 +1,5 @@
 import { useEffect, useRef, useContext } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Profile from "./atomic/Profile";
 import Modal from "../Modal";
 import TwitterContext from "../context/TwitterContext";
@@ -43,13 +43,13 @@ function Sidebar({ open, onClose }) {
         </div>
         <ul>
           <li className="text-xl my-2">
-            <Link to="/">Home</Link>
+            <Link href="/">Home</Link>
           </li>
           <li className="text-xl my-2">
-            <Link to="/user">Profile</Link>
+            <Link href="/user">Profile</Link>
           </li>
           <li className="text-xl my-2">
-            <Link to="/search">Search</Link>
+            <Link href="/search">Search</Link>
           </li>
         </ul>
       </div>

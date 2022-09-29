@@ -1,16 +1,18 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
-import Header from "../components/Header";
-import MainSection from "../components/MainSection";
-import ThreadList from "../components/thread/ThreadList";
+import Header from "../src/components/Header";
+import MainSection from "../src/components/MainSection";
+import ThreadList from "../src/components/thread/ThreadList";
 
-import SearchIcon from "../components/icons/SearchIcon";
-import BackIcon from "../components/icons/BackIcon";
-import GlitchIcon from "../components/icons/GlitchIcon";
-import CloseIcon from "../components/icons/CloseIcon";
+import {
+  XMarkIcon,
+  MagnifyingGlassIcon,
+  ArrowLeftIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/solid";
 
-import TwitterContext from "../context/TwitterContext";
+import TwitterContext from "../src/context/TwitterContext";
 
 function Search() {
   const [keyword, setKeyword] = useState("");
@@ -36,12 +38,12 @@ function Search() {
   return (
     <>
       <Header>
-        <Link to="/">
-          <BackIcon />
+        <Link href="/">
+          <ArrowLeftIcon className="w-6 h-6 hover:text-blue-500" />
         </Link>
         <div className="border border-blue-400 rounded-full px-3 w-80">
           <div className="h-9 flex items-center">
-            <SearchIcon />
+            <MagnifyingGlassIcon className="w-7 h-7 text-blue-500 mr-2" />
             <input
               type="text"
               placeholder="Search Twitter"
@@ -55,12 +57,12 @@ function Search() {
                 onClick={clearKeyword}
                 className="cursor-pointer text-gray-400"
               >
-                <CloseIcon />
+                <XMarkIcon className="w-6 h-6" />
               </div>
             )}
           </div>
         </div>
-        <GlitchIcon />
+        <SparklesIcon className="w-7 h-7 text-blue-500" />
       </Header>
       <MainSection top="5rem" bottom="5rem">
         {searchData.length > 0 ? (
